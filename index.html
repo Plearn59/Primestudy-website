@@ -1538,6 +1538,23 @@
       color: rgba(255,255,255,0.16);
       line-height: 1;
     }
+    .ts-cta-card { background: var(--orange); }
+    .ts-cta-card .ts-fb-badge { background: var(--navy); }
+    .ts-cta-card .ts-fb-name { color: white; }
+    .ts-cta-card .ts-fb-name::after { background: white; }
+    .ts-cta-mark {
+      position: absolute; top: 0; right: 0; padding: 10px 24px 0 0;
+      font-family: 'Playfair Display', serif; font-size: 220px; font-weight: 900;
+      color: rgba(255,255,255,0.16); line-height: 0.7; pointer-events: none;
+    }
+    .ts-cta-invite-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 18px; padding: 11px 22px; border-radius: 999px;
+      border: 1.5px solid rgba(255,255,255,0.55); color: white;
+      font-size: 13px; font-weight: 700; text-decoration: none;
+      transition: all 0.25s;
+    }
+    .ts-cta-invite-btn:hover { background: white; color: var(--orange); transform: translateY(-2px); }
     .ts-fb-mock-tag {
       position: absolute; top: 18px; right: 18px;
       background: rgba(255,255,255,0.12);
@@ -1938,16 +1955,16 @@
       </div>
     </div>
 
-    <div class="ts-card-fb reveal">
-      <div class="ts-fb-badge">Funding Search</div>
-      <div class="ts-fb-mock-tag">Sample Story</div>
-      <div class="ts-fb-avatar" style="background: linear-gradient(135deg, var(--orange) 0%, var(--navy) 65%, #16334f 140%);"><span>N</span></div>
+    <div class="ts-card-fb ts-cta-card reveal">
+      <div class="ts-fb-badge">Your Journey</div>
+      <div class="ts-cta-mark" aria-hidden="true">"</div>
       <div class="ts-fb-gradient"></div>
       <div class="ts-fb-content">
-        <div class="ts-fb-name">Nan</div>
-        <div class="ts-fb-uni">University of Edinburgh &nbsp;·&nbsp; MA International Relations</div>
+        <div class="ts-fb-name">You —</div>
+        <div class="ts-fb-uni">Your University &nbsp;·&nbsp; Your Story</div>
         <div class="ts-fb-ql">"</div>
-        <div class="ts-fb-quote">ทุนการศึกษาหายากกว่าที่คิด ต้องหาทั้งทุนมหาวิทยาลัยและทุนจากไทย — สุดท้ายได้ scholarship ช่วยลดค่าเทอมไปเกือบครึ่ง คุ้มกับเวลาที่ใช้ค้นคว้ามาก</div>
+        <div class="ts-fb-quote">ทุกเรื่องราวในหน้านี้เริ่มจากการปรึกษาฟรีเพียงครั้งเดียว เรื่องราวต่อไปอาจเป็นของคุณ</div>
+        <a href="#contact" class="ts-cta-invite-btn">Start Your Story &nbsp;→</a>
       </div>
     </div>
 
