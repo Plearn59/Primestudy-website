@@ -22,6 +22,7 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 96px; }
 
     body {
       font-family: 'DM Sans', sans-serif;
@@ -622,49 +623,6 @@
     /* Universities */
     .unis-section { background: white; }
 
-    /* Language intro block */
-    .lang-intro {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: center;
-      margin-bottom: 88px;
-    }
-    .lang-tagline {
-      font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
-      color: var(--warm-grey); margin-top: 22px;
-    }
-    .lang-intro-buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
-
-    .lang-visual { position: relative; height: 320px; }
-    .lang-photo-main {
-      position: absolute; inset: 0 40px 0 0; background: var(--navy);
-      border-radius: 20px; overflow: hidden;
-    }
-    .lang-photo-main .tag {
-      position: absolute; top: 18px; left: 18px; font-size: 10px; letter-spacing: 1.5px;
-      text-transform: uppercase; color: rgba(255,255,255,0.55);
-      border: 1px solid rgba(255,255,255,0.25); padding: 5px 10px; border-radius: 6px;
-    }
-    .lang-photo-main .mark {
-      position: absolute; bottom: 18px; right: 18px; width: 26px; height: 26px;
-      border-right: 2px solid var(--orange); border-bottom: 2px solid var(--orange);
-    }
-    .lang-polaroid {
-      position: absolute; bottom: -22px; left: 0; width: 180px;
-      background: white; padding: 10px 10px 18px; border-radius: 6px;
-      box-shadow: 0 20px 45px rgba(8,25,46,0.22); transform: rotate(-6deg);
-    }
-    .lang-polaroid .frame {
-      height: 140px; background: var(--border); border-radius: 3px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--warm-grey);
-    }
-    .lang-polaroid figcaption {
-      font-family: 'Playfair Display', serif; font-style: italic; text-align: center;
-      margin-top: 10px; color: var(--navy); font-size: 15px;
-    }
-
     .course-list-head { max-width: 600px; margin-bottom: 40px; }
     .course-grid {
       display: grid;
@@ -707,8 +665,6 @@
     .course-link:hover { color: var(--orange); }
 
     @media (max-width: 900px) {
-      .lang-intro { grid-template-columns: 1fr; }
-      .lang-visual { margin-top: 20px; }
       .course-grid { grid-template-columns: 1fr; }
     }
 
@@ -1663,9 +1619,9 @@
     <a href="#universities">Universities<span class="nav-th">มหาวิทยาลัย</span></a>
     <a href="#testimonials">Stories<span class="nav-th">เรื่องราว</span></a>
     <a href="#faq">FAQ<span class="nav-th">คำถามที่พบบ่อย</span></a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdS3227gq9oXEKSoLsEGMOhy2GkxhQXJJtach9swyvKjjC_8g/viewform" target="_blank" rel="noopener" class="nav-cta btn">Book Free Consultation<span class="nav-th">ปรึกษาฟรี</span></a>
+    <a href="#contact" class="nav-cta btn">Book Free Consultation<span class="nav-th">ปรึกษาฟรี</span></a>
   </div>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdS3227gq9oXEKSoLsEGMOhy2GkxhQXJJtach9swyvKjjC_8g/viewform" target="_blank" rel="noopener" class="mobile-cta">ปรึกษาฟรี</a>
+  <a href="#contact" class="mobile-cta">ปรึกษาฟรี</a>
 </nav>
 
 <!-- HERO -->
@@ -1680,7 +1636,7 @@
     <div class="th">เพราะทุกความฝันสมควรได้รับการดูแลอย่างดีที่สุด</div>
     <div class="hero-buttons">
       <a href="#" class="btn btn-outline" onclick="document.getElementById('servicesModal').classList.add('active');return false;">Explore Services / ดูบริการ</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdS3227gq9oXEKSoLsEGMOhy2GkxhQXJJtach9swyvKjjC_8g/viewform" target="_blank" rel="noopener" class="btn btn-primary" style="background:var(--navy);box-shadow:0 8px 30px rgba(8,25,46,0.35);border:2px solid rgba(255,255,255,0.5);">Book Free Consultation / ปรึกษาฟรี</a>
+      <a href="#contact" class="btn btn-primary" style="background:var(--navy);box-shadow:0 8px 30px rgba(8,25,46,0.35);border:2px solid rgba(255,255,255,0.5);">Book Free Consultation / ปรึกษาฟรี</a>
     </div>
   </div>
 </section>
@@ -1821,30 +1777,6 @@
 
 <!-- LANGUAGE PARTNERS -->
 <section id="language-schools" class="unis-section">
-  <div class="lang-intro">
-    <div class="reveal">
-      <div class="section-tag">English Language Courses</div>
-      <h2>Build Your English.<br>Start Your UK Adventure.</h2>
-      <div class="th">เตรียมภาษาอังกฤษให้พร้อม เริ่มต้นการผจญภัยในสหราชอาณาจักร</div>
-      <p style="margin-top:16px;max-width:460px;">Many students strengthen their English or complete a pre-sessional course before starting university. We work with trusted language schools across London to get you ready.</p>
-      <div class="lang-tagline">Study &nbsp;·&nbsp; Connect &nbsp;·&nbsp; Explore</div>
-      <div class="lang-intro-buttons">
-        <a href="#course-list" class="btn btn-primary">Explore Courses</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdS3227gq9oXEKSoLsEGMOhy2GkxhQXJJtach9swyvKjjC_8g/viewform" target="_blank" rel="noopener" class="btn btn-outline" style="background:transparent;color:var(--navy);border:1.5px solid var(--navy);box-shadow:none;">Free Consultation</a>
-      </div>
-    </div>
-    <div class="lang-visual reveal">
-      <div class="lang-photo-main">
-        <div class="tag">Photo — Student Learning English</div>
-        <div class="mark"></div>
-      </div>
-      <figure class="lang-polaroid">
-        <div class="frame">Photo — London</div>
-        <figcaption>London</figcaption>
-      </figure>
-    </div>
-  </div>
-
   <div class="course-list-head reveal" id="course-list">
     <div class="section-tag">Language Partners</div>
     <h2 style="font-size:clamp(26px,2.6vw,36px);">Find the right English course for you.</h2>
