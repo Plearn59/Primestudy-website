@@ -1009,17 +1009,19 @@
 
     .float-btn svg { width: 28px; height: 28px; fill: white; }
 
-    .float-btn-line-badge {
-      display: block;
-      line-height: 0;
-      filter: drop-shadow(0 6px 24px rgba(0,0,0,0.2));
-      transition: transform 0.25s, filter 0.25s;
+    .float-btn-line-gray { background: #06C755; }
+    .line-icon-wrap { position: relative; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; }
+    .line-icon-wrap svg { width: 32px; height: 32px; fill: white; }
+    .line-icon-text {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -55%);
+      color: #06C755;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 7px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
     }
-    .float-btn-line-badge:hover {
-      transform: scale(1.1);
-      filter: drop-shadow(0 10px 32px rgba(0,0,0,0.25));
-    }
-    .float-btn-line-badge img { display: block; border-radius: 999px; }
 
     .float-tooltip {
       position: absolute;
@@ -1659,7 +1661,6 @@
   <div class="hero-left">
     <div class="hero-eyebrow">UK Education Consultancy · Based in London</div>
     <h1>Time to <em>Prime</em><br>Your Future.</h1>
-    <div class="hero-th-title">ถึงเวลาสร้างอนาคตของคุณอย่างมีแบบแผน</div>
     <p class="hero-desc">
       A London-based consultancy guiding ambitious students through every step of their UK university journey — with clarity, care, and expertise.
     </p>
@@ -2181,8 +2182,12 @@
 
 <!-- FLOATING BUTTONS -->
 <div class="float-btns">
-  <a href="https://lin.ee/Wt3H1xN" target="_blank" rel="noopener" class="float-btn-line-badge">
-    <img src="https://scdn.line-apps.com/n/line_add_friends/btn/en.png" alt="Add friend" height="36" border="0">
+  <a href="https://lin.ee/Wt3H1xN" target="_blank" rel="noopener" class="float-btn float-btn-line-gray">
+    <div class="float-tooltip">LINE</div>
+    <div class="line-icon-wrap">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.94 2 10.8c0 3.15 2.08 5.9 5.19 7.48-.23.86-.83 3.08-.95 3.56-.15.6.22.59.46.43.19-.13 3.02-2.05 4.25-2.88.34.05.69.07 1.05.07 5.52 0 10-3.94 10-8.8S17.52 2 12 2z"/></svg>
+      <span class="line-icon-text">LINE</span>
+    </div>
   </a>
   <a href="https://www.facebook.com/profile.php?id=61575451864391" target="_blank" rel="noopener" class="float-btn float-btn-fb">
     <div class="float-tooltip">Facebook</div>
