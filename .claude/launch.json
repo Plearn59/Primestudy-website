@@ -1,0 +1,21 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "primestudy",
+      "runtimeExecutable": "powershell.exe",
+      "runtimeArgs": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        ".claude\\serve.ps1",
+        "-Port",
+        "8090",
+        "-Root",
+        "C:\\Users\\noctu\\Desktop\\Document Primestudy"
+      ],
+      "port": 8090
+    }
+  ]
+}
