@@ -1594,16 +1594,12 @@
       position: absolute; top: 16px; right: 16px;
       display: flex; flex-direction: column; align-items: flex-end; gap: 8px;
       z-index: 2;
-      background: rgba(255,255,255,0.95);
-      padding: 8px 10px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     .ts-fb-uni-logo img {
       display: block;
       object-fit: contain;
     }
-    .ts-fb-uni-logo .logo-wide { width: 108px; height: 34px; }
+    .ts-fb-uni-logo .logo-wide { height: 36px; width: auto; max-width: 130px; }
     .ts-fb-uni-logo .logo-crest { width: 38px; height: 38px; }
     .ts-fb-content {
       position: absolute; bottom: 0; left: 0; right: 0;
@@ -1619,11 +1615,6 @@
     .ts-fb-name::after { content: ''; display: block; width: 22px; height: 2.5px; background: var(--orange); }
     .ts-fb-uni { font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 12px; letter-spacing: 0.3px; }
     .ts-fb-quote { font-size: 13px; color: rgba(255,255,255,0.82); font-style: italic; line-height: 1.75; }
-    .ts-fb-ql {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px; color: var(--orange);
-      line-height: 0.8; margin-bottom: 6px;
-    }
     .ts-cta-row { display: flex; justify-content: center; margin-top: 40px; }
     .ts-cta-btn {
       display: inline-flex; align-items: center; gap: 10px;
@@ -1648,7 +1639,6 @@
 <nav>
   <div class="logo">Prime<span>Study</span> Abroad</div>
   <div class="nav-links">
-    <a href="#services">Services<span class="nav-th">บริการ</span></a>
     <a href="#process">Process<span class="nav-th">ขั้นตอน</span></a>
     <a href="#universities">Universities<span class="nav-th">มหาวิทยาลัย</span></a>
     <a href="#testimonials">Stories<span class="nav-th">เรื่องราว</span></a>
@@ -1735,7 +1725,7 @@
       </svg>
     </div>
     <div class="stat-label">Russell Group Access</div>
-    <div class="stat-th">เชื่อมต่อมหาวิทยาลัยชั้นนำ</div>
+    <div class="stat-th">เชื่อมต่อมหาวิทยาลัยชั้นนำ และโรงเรียนสอนภาษาชั้นนำ</div>
   </div>
   <div class="stat">
     <div class="stat-icon">
@@ -1763,50 +1753,6 @@
     <div class="stat-th">ร่วมเป็นส่วนหนึ่งของเรา</div>
   </div>
 </div>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-header reveal">
-    <div class="section-tag">What We Do</div>
-    <h2>End-to-End Support,<br>From Dream to Degree.</h2>
-    <div class="th">ดูแลครบทุกขั้นตอน ตั้งแต่เริ่มคิดจนถึงวันเดินทาง</div>
-  </div>
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <div class="service-num">01</div>
-      <h3>Strategy &amp; Course Planning</h3>
-      <p>We map your ambitions, academic background, and career goals to the right UK university and course — no guesswork.</p>
-      <div class="th">วางแผนเส้นทางการศึกษาให้เหมาะกับเป้าหมายของคุณ</div>
-      <ul>
-        <li>Personalised course matching</li>
-        <li>University shortlisting</li>
-        <li>Career pathway planning</li>
-      </ul>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-num">02</div>
-      <h3>Application &amp; Documents</h3>
-      <p>We manage every aspect of your application — personal statements, references, deadlines — so nothing falls through the cracks.</p>
-      <div class="th">จัดการเอกสารและใบสมัครทุกอย่างแทนคุณ</div>
-      <ul>
-        <li>Personal statement writing</li>
-        <li>Document preparation &amp; review</li>
-        <li>UCAS &amp; direct applications</li>
-      </ul>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-num">03</div>
-      <h3>Visa, Housing &amp; Arrival</h3>
-      <p>From Student Visa prep to finding your first home in the UK, we're with you until you're settled and confident.</p>
-      <div class="th">ช่วยเรื่องวีซ่า ที่พัก และการเริ่มต้นชีวิตใน UK</div>
-      <ul>
-        <li>Student Visa guidance</li>
-        <li>Accommodation search</li>
-        <li>UK arrival orientation</li>
-      </ul>
-    </div>
-  </div>
-</section>
 
 <!-- LANGUAGE PARTNERS -->
 <section id="language-schools" class="unis-section">
@@ -1910,8 +1856,7 @@
       <div class="ts-fb-content">
         <div class="ts-fb-name">Bam</div>
         <div class="ts-fb-uni">University of Reading &nbsp;·&nbsp; PhD Biological Sciences</div>
-        <div class="ts-fb-ql">"</div>
-        <div class="ts-fb-quote">การเตรียมตัวสมัคร PhD ใน UK ต่างจากปริญญาตรีมาก ต้องหา supervisor ให้ได้ก่อน แล้วค่อยยื่นสมัคร — ถ้าไม่มีใครแนะนำก็หลงทางได้ง่ายมาก</div>
+        <div class="ts-fb-quote">เรียน PhD ที่ Reading ไม่ได้มีแค่การทำ Research คนเดียว — ที่นี่มีทั้ง Supervisor ที่คอย Support, Research Community ระดับนานาชาติ และ Lab &amp; Facilities ที่พร้อมให้เราเปลี่ยนไอเดียให้กลายเป็นงานวิจัยจริง</div>
       </div>
     </div>
 
@@ -1919,15 +1864,14 @@
       <div class="ts-fb-badge">Scholarship Journey</div>
       <img src="Picture/Tos/Tos-cropped-2.jpg" alt="Tos" />
       <div class="ts-fb-uni-logo">
-        <img class="logo-wide" src="Picture/Bam/Reading%20Logo.png" alt="University of Reading" />
-        <img class="logo-crest" src="Picture/Tos/Chevening.png" alt="Chevening Scholarship" />
+        <img class="logo-wide" style="height: 32px;" src="Picture/Bam/Reading%20Logo.png" alt="University of Reading" />
+        <img class="logo-crest" style="width: 49px; height: 49px;" src="Picture/Tos/Chevening.png" alt="Chevening Scholarship" />
       </div>
       <div class="ts-fb-gradient"></div>
       <div class="ts-fb-content">
         <div class="ts-fb-name">Tos</div>
         <div class="ts-fb-uni">University of Reading &nbsp;·&nbsp; LLB Law</div>
-        <div class="ts-fb-ql">"</div>
-        <div class="ts-fb-quote">ทุน Chevening คือโอกาสที่เปลี่ยนชีวิตจริงๆ ตอนสมัครต้องเขียน essay ให้เห็นว่าเราจะกลับมาสร้างการเปลี่ยนแปลงให้ประเทศยังไง — เลือก Reading เพราะคณะนิติศาสตร์แข็งมากและมี support นักเรียนทุนโดยเฉพาะ</div>
+        <div class="ts-fb-quote">Chevening ไม่ได้มองแค่ว่าเราเก่งแค่ไหน แต่เราจะนำโอกาสนี้ไปสร้าง Impact อะไรต่อ — Reading เปิดโอกาสให้ผมได้เปลี่ยนมุมมอง เข้าใจสังคมปัจจุบันอย่างลึกซึ้ง และเรียนรู้ผ่านการถกเถียงจากประเด็นที่เกิดขึ้นจริง</div>
       </div>
     </div>
 
@@ -1941,7 +1885,6 @@
       <div class="ts-fb-content">
         <div class="ts-fb-name">Namtarn</div>
         <div class="ts-fb-uni">Henley Business School &nbsp;·&nbsp; MSc Finance</div>
-        <div class="ts-fb-ql">"</div>
         <div class="ts-fb-quote">Henley ดูประสบการณ์ทำงานเป็นหลัก ไม่ใช่แค่เกรด ต้องเขียน CV และ personal statement ให้เห็นว่าเรามี potential ด้านการเงินจริงๆ — เตรียมกว่า 2 เดือนกว่าจะพร้อมสมัคร</div>
       </div>
     </div>
@@ -1950,14 +1893,27 @@
       <div class="ts-fb-badge">Data Science Journey</div>
       <img src="Picture/Pan/Pan-cropped.jpg" alt="Pan" />
       <div class="ts-fb-uni-logo">
-        <img class="logo-wide" src="Picture/Pan/RHUL-trimmed.png" alt="Royal Holloway, University of London" />
+        <img class="logo-wide" style="height: 54px;" src="Picture/Pan/RHUL-trimmed.png" alt="Royal Holloway, University of London" />
       </div>
       <div class="ts-fb-gradient"></div>
       <div class="ts-fb-content">
         <div class="ts-fb-name">Pan</div>
         <div class="ts-fb-uni">Royal Holloway, University of London &nbsp;·&nbsp; MSc Data Science and Analytics</div>
-        <div class="ts-fb-ql">"</div>
         <div class="ts-fb-quote">MSc Data Science and Analytics ที่ Royal Holloway รับนักเรียนจากหลากหลายสายมาก ไม่จำเป็นต้องจบสายคอมมาก่อน แค่ต้องแสดงให้เห็นว่าเราพร้อมเรียนรู้ทักษะใหม่</div>
+      </div>
+    </div>
+
+    <div class="ts-card-fb reveal">
+      <div class="ts-fb-badge">MBA Journey</div>
+      <img src="Picture/Michael Paenthale/Michael Paenthale.jpeg" alt="Michael" />
+      <div class="ts-fb-uni-logo">
+        <img class="logo-wide" src="Picture/Michael Paenthale/New-cropped.png" alt="University of Westminster" />
+      </div>
+      <div class="ts-fb-gradient"></div>
+      <div class="ts-fb-content">
+        <div class="ts-fb-name">Michael</div>
+        <div class="ts-fb-uni">University of Westminster &nbsp;·&nbsp; MBA</div>
+        <div class="ts-fb-quote">หลักสูตรที่นำ Innovation มาปรับใช้กับธุรกิจอย่างเหมาะสม พร้อมการดูแลนักศึกษาที่ได้รับการจัดอันดับ #1 in London for Student Support 2026</div>
       </div>
     </div>
 
@@ -1968,7 +1924,6 @@
       <div class="ts-fb-content">
         <div class="ts-fb-name">You —</div>
         <div class="ts-fb-uni">Your University &nbsp;·&nbsp; Your Story</div>
-        <div class="ts-fb-ql">"</div>
         <div class="ts-fb-quote">ทุกเรื่องราวในหน้านี้เริ่มจากการปรึกษาฟรีเพียงครั้งเดียว เรื่องราวต่อไปอาจเป็นของคุณ</div>
         <a href="#contact" class="ts-cta-invite-btn">Start Your Story &nbsp;→</a>
       </div>
@@ -2072,7 +2027,7 @@
     <!-- Left: channels -->
     <div class="contact-info reveal">
       <h3>เลือกช่องทางที่สะดวก</h3>
-      <p>ทีมของเราพร้อมตอบภาษาไทยและภาษาอังกฤษ ติดต่อได้เลยผ่าน WhatsApp หรืออีเมล</p>
+      <p>ทีมของเราพร้อมตอบภาษาไทยและภาษาอังกฤษ ติดต่อได้เลยผ่าน LINE หรืออีเมล</p>
       <div class="contact-channels">
         <a href="mailto:info@primestudy.co.uk" class="channel-btn channel-btn-email">
           <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -2147,7 +2102,7 @@
   <div class="th" style="position:relative;margin-bottom:40px;">จองการปรึกษาฟรีกับทีมของเรา ไม่มีข้อผูกมัด</div>
   <div class="cta-buttons">
     <a href="https://ig.me/m/primestudy.abroad" target="_blank" rel="noopener" class="btn btn-white">ติดต่อเรา · Contact Us</a>
-    <a href="https://wa.me/447700000000" target="_blank" rel="noopener" class="btn btn-outline-white">WhatsApp เลย</a>
+    <a href="https://lin.ee/Wt3H1xN" target="_blank" rel="noopener" class="btn btn-outline-white">LINE เลย</a>
   </div>
 </section>
 
@@ -2157,13 +2112,6 @@
     <div>
       <div class="footer-logo">Prime<span>Study</span> Abroad</div>
       <div class="footer-tagline">A London-based education consultancy helping Thai students navigate the UK university system with clarity and confidence.</div>
-    </div>
-    <div class="footer-col">
-      <h5>Services</h5>
-      <a href="#services">Strategy &amp; Planning</a>
-      <a href="#services">Applications</a>
-      <a href="#services">Visa Support</a>
-      <a href="#services">Housing &amp; Arrival</a>
     </div>
     <div class="footer-col">
       <h5>Company</h5>
