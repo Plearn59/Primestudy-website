@@ -678,30 +678,45 @@
     /* Universities */
     .unis-section { background: white; }
 
-    .uni-logos-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+    .uni-logos-marquee {
+      overflow: hidden;
+      width: 100%;
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
     }
+    .uni-logos-track {
+      display: flex;
+      width: max-content;
+      gap: 24px;
+      animation: uniMarquee 24s linear infinite;
+    }
+    .uni-logos-marquee:hover .uni-logos-track { animation-play-state: paused; }
+
+    @keyframes uniMarquee {
+      from { transform: translateX(-50%); }
+      to   { transform: translateX(0%); }
+    }
+
     .uni-logo-card {
       display: flex;
       align-items: center;
       justify-content: center;
+      flex: 0 0 auto;
+      width: 220px;
       height: 140px;
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 24px;
-      transition: all 0.25s;
+      transition: border-color 0.25s, box-shadow 0.25s;
     }
     .uni-logo-card:hover {
       border-color: var(--orange);
       box-shadow: 0 12px 30px rgba(201,74,2,0.1);
-      transform: translateY(-4px);
     }
     .uni-logo-card img { max-height: 56px; max-width: 100%; object-fit: contain; }
 
     @media (max-width: 900px) {
-      .uni-logos-grid { grid-template-columns: repeat(2, 1fr); }
+      .uni-logo-card { width: 170px; height: 120px; }
     }
 
     /* Testimonials */
@@ -1877,11 +1892,17 @@
     <div class="th">มหาวิทยาลัยที่ศิษย์เก่าของเรากำลังเรียนอยู่จริง</div>
     <p>A glimpse of the universities our students have been placed at — with more added as our community grows.</p>
   </div>
-  <div class="uni-logos-grid">
-    <div class="uni-logo-card"><img src="Picture/Bam/Reading%20Logo.png" alt="University of Reading" /></div>
-    <div class="uni-logo-card"><img src="Picture/Pan/RHUL-trimmed.png" alt="Royal Holloway, University of London" /></div>
-    <div class="uni-logo-card"><img src="Picture/Namtarn/henley-business-school-logo.png" alt="Henley Business School" /></div>
-    <div class="uni-logo-card"><img src="Picture/Michael Paenthale/New-cropped.png" alt="University of Westminster" /></div>
+  <div class="uni-logos-marquee">
+    <div class="uni-logos-track">
+      <div class="uni-logo-card"><img src="Picture/Bam/Reading%20Logo.png" alt="University of Reading" /></div>
+      <div class="uni-logo-card"><img src="Picture/Pan/RHUL-trimmed.png" alt="Royal Holloway, University of London" /></div>
+      <div class="uni-logo-card"><img src="Picture/Namtarn/henley-business-school-logo.png" alt="Henley Business School" /></div>
+      <div class="uni-logo-card"><img src="Picture/Michael Paenthale/New-cropped.png" alt="University of Westminster" /></div>
+      <div class="uni-logo-card" aria-hidden="true"><img src="Picture/Bam/Reading%20Logo.png" alt="" /></div>
+      <div class="uni-logo-card" aria-hidden="true"><img src="Picture/Pan/RHUL-trimmed.png" alt="" /></div>
+      <div class="uni-logo-card" aria-hidden="true"><img src="Picture/Namtarn/henley-business-school-logo.png" alt="" /></div>
+      <div class="uni-logo-card" aria-hidden="true"><img src="Picture/Michael Paenthale/New-cropped.png" alt="" /></div>
+    </div>
   </div>
 </section>
 
