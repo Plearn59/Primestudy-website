@@ -678,49 +678,30 @@
     /* Universities */
     .unis-section { background: white; }
 
-    .course-list-head { max-width: 600px; margin-bottom: 40px; }
-    .course-grid {
+    .uni-logos-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 24px;
     }
-    .course-card {
+    .uni-logo-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 140px;
       border: 1px solid var(--border);
       border-radius: 20px;
-      overflow: hidden;
+      padding: 24px;
       transition: all 0.25s;
     }
-    .course-card:hover {
+    .uni-logo-card:hover {
       border-color: var(--orange);
       box-shadow: 0 12px 30px rgba(201,74,2,0.1);
       transform: translateY(-4px);
     }
-    .course-photo {
-      height: 150px; background: var(--navy); position: relative;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .course-photo span { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 30px; color: rgba(255,255,255,0.25); }
-    .course-photo .tag {
-      position: absolute; top: 14px; left: 14px; font-size: 9px; letter-spacing: 1px;
-      text-transform: uppercase; color: rgba(255,255,255,0.5);
-      border: 1px solid rgba(255,255,255,0.25); padding: 4px 8px; border-radius: 6px;
-    }
-    .course-body { padding: 22px 20px; }
-    .course-subject {
-      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px;
-      text-transform: uppercase; color: var(--orange); background: rgba(201,74,2,0.08);
-      padding: 4px 10px; border-radius: 6px; margin-bottom: 12px;
-    }
-    .course-body h4 { font-size: 17px; color: var(--navy); margin-bottom: 4px; }
-    .course-body .loc { font-size: 12.5px; color: var(--warm-grey); }
-    .course-link {
-      display: inline-flex; align-items: center; gap: 6px; margin-top: 16px;
-      font-size: 13.5px; font-weight: 700; color: var(--navy); text-decoration: none;
-    }
-    .course-link:hover { color: var(--orange); }
+    .uni-logo-card img { max-height: 56px; max-width: 100%; object-fit: contain; }
 
     @media (max-width: 900px) {
-      .course-grid { grid-template-columns: 1fr; }
+      .uni-logos-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     /* Testimonials */
@@ -1888,7 +1869,21 @@
   </div>
 </section>
 
-
+<!-- UNIVERSITIES -->
+<section id="universities" class="unis-section">
+  <div class="section-header reveal">
+    <div class="section-tag">Our Track Record</div>
+    <h2>Where Our Students<br>Study Today.</h2>
+    <div class="th">มหาวิทยาลัยที่ศิษย์เก่าของเรากำลังเรียนอยู่จริง</div>
+    <p>A glimpse of the universities our students have been placed at — with more added as our community grows.</p>
+  </div>
+  <div class="uni-logos-grid">
+    <div class="uni-logo-card"><img src="Picture/Bam/Reading%20Logo.png" alt="University of Reading" /></div>
+    <div class="uni-logo-card"><img src="Picture/Pan/RHUL-trimmed.png" alt="Royal Holloway, University of London" /></div>
+    <div class="uni-logo-card"><img src="Picture/Namtarn/henley-business-school-logo.png" alt="Henley Business School" /></div>
+    <div class="uni-logo-card"><img src="Picture/Michael Paenthale/New-cropped.png" alt="University of Westminster" /></div>
+  </div>
+</section>
 
 <!-- REAL EXPERIENCES -->
 <section id="testimonials" class="testimonials-section">
