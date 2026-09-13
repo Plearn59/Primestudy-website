@@ -119,37 +119,60 @@
       align-items: center;
     }
     .nav-links a {
+      position: relative;
       display: inline-flex;
       flex-direction: column;
       align-items: center;
       gap: 2px;
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 700;
+      letter-spacing: 0.2px;
       line-height: 1.15;
       color: var(--navy);
       text-decoration: none;
       margin-left: 32px;
+      padding-bottom: 4px;
       transition: color 0.2s;
     }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 100%;
+      bottom: 0;
+      height: 2px;
+      background: var(--orange);
+      border-radius: 2px;
+      transition: right 0.25s ease;
+    }
     .nav-links a:hover { color: var(--orange); }
+    .nav-links a:hover::after { right: 0; }
 
     .nav-th {
       font-size: 10px;
-      font-weight: 400;
+      font-weight: 500;
       color: var(--navy);
-      opacity: 0.5;
+      opacity: 0.55;
     }
-    .nav-links a:hover .nav-th { color: var(--orange); opacity: 0.8; }
+    .nav-links a:hover .nav-th { color: var(--orange); opacity: 0.85; }
 
     .nav-cta {
       background: var(--orange);
       color: white !important;
-      padding: 8px 22px 9px;
+      padding: 11px 26px 12px;
       border-radius: 999px;
-      font-size: 13px !important;
+      font-size: 13.5px !important;
+      font-weight: 800;
+      box-shadow: 0 6px 20px rgba(201,74,2,0.35);
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
     }
-    .nav-cta:hover { background: var(--orange-light) !important; color: white !important; }
-    .nav-cta .nav-th { color: rgba(255,255,255,0.75); }
+    .nav-cta::after { content: none; }
+    .nav-cta:hover {
+      background: var(--orange-light) !important;
+      color: white !important;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(201,74,2,0.45);
+    }
+    .nav-cta .nav-th { color: rgba(255,255,255,0.8); }
 
     /* ── HERO ── */
     :root {
@@ -655,49 +678,46 @@
     /* Universities */
     .unis-section { background: white; }
 
-    .course-list-head { max-width: 600px; margin-bottom: 40px; }
-    .course-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    .uni-logos-marquee {
+      overflow: hidden;
+      width: 100%;
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
     }
-    .course-card {
+    .uni-logos-track {
+      display: flex;
+      width: max-content;
+      gap: 24px;
+      animation: uniMarquee 55s linear infinite;
+    }
+    .uni-logos-marquee:hover .uni-logos-track { animation-play-state: paused; }
+
+    @keyframes uniMarquee {
+      from { transform: translateX(-50%); }
+      to   { transform: translateX(0%); }
+    }
+
+    .uni-logo-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      width: 220px;
+      height: 140px;
       border: 1px solid var(--border);
       border-radius: 20px;
-      overflow: hidden;
-      transition: all 0.25s;
+      padding: 24px;
+      transition: border-color 0.25s, box-shadow 0.25s;
     }
-    .course-card:hover {
+    .uni-logo-card:hover {
       border-color: var(--orange);
       box-shadow: 0 12px 30px rgba(201,74,2,0.1);
-      transform: translateY(-4px);
     }
-    .course-photo {
-      height: 150px; background: var(--navy); position: relative;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .course-photo span { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 30px; color: rgba(255,255,255,0.25); }
-    .course-photo .tag {
-      position: absolute; top: 14px; left: 14px; font-size: 9px; letter-spacing: 1px;
-      text-transform: uppercase; color: rgba(255,255,255,0.5);
-      border: 1px solid rgba(255,255,255,0.25); padding: 4px 8px; border-radius: 6px;
-    }
-    .course-body { padding: 22px 20px; }
-    .course-subject {
-      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px;
-      text-transform: uppercase; color: var(--orange); background: rgba(201,74,2,0.08);
-      padding: 4px 10px; border-radius: 6px; margin-bottom: 12px;
-    }
-    .course-body h4 { font-size: 17px; color: var(--navy); margin-bottom: 4px; }
-    .course-body .loc { font-size: 12.5px; color: var(--warm-grey); }
-    .course-link {
-      display: inline-flex; align-items: center; gap: 6px; margin-top: 16px;
-      font-size: 13.5px; font-weight: 700; color: var(--navy); text-decoration: none;
-    }
-    .course-link:hover { color: var(--orange); }
+    .uni-logo-card img { max-height: 56px; max-width: 100%; object-fit: contain; }
+    .uni-logo-card--dark { background: var(--navy); border-color: var(--navy); }
 
     @media (max-width: 900px) {
-      .course-grid { grid-template-columns: 1fr; }
+      .uni-logo-card { width: 170px; height: 120px; }
     }
 
     /* Testimonials */
@@ -1865,7 +1885,48 @@
   </div>
 </section>
 
-
+<!-- UNIVERSITIES -->
+<section id="universities" class="unis-section">
+  <div class="section-header reveal">
+    <div class="section-tag">Where We Guide You</div>
+    <h2>Find the Right<br>University for You.</h2>
+    <div class="th">ค้นหามหาวิทยาลัยที่ใช่สำหรับคุณ</div>
+    <p>Explore UK universities available through PrimeStudy. We help you find suitable options based on your goals, qualifications and budget.</p>
+    <a href="#contact" class="btn btn-primary" style="margin-top:24px;">Find My University Options</a>
+  </div>
+  <div class="uni-logos-marquee">
+    <div class="uni-logos-track">
+      <div class="uni-logo-card"><img src="Picture/Bam/Reading%20Logo.png" alt="University of Reading" /></div>
+      <div class="uni-logo-card"><img src="Picture/Pan/RHUL-trimmed.png" alt="Royal Holloway, University of London" /></div>
+      <div class="uni-logo-card"><img src="Picture/Namtarn/henley-business-school-logo.png" alt="Henley Business School" /></div>
+      <div class="uni-logo-card"><img src="Picture/Michael Paenthale/New-cropped.png" alt="University of Westminster" /></div>
+      <div class="uni-logo-card"><img src="Picture/Universities/Leeds.png" alt="University of Leeds" /></div>
+      <div class="uni-logo-card"><img src="Picture/Universities/Birmingham.png" alt="University of Birmingham" /></div>
+      <div class="uni-logo-card"><img src="Picture/Universities/Warwick.png" alt="University of Warwick" /></div>
+      <div class="uni-logo-card"><img src="Picture/Universities/Manchester.png" alt="University of Manchester" /></div>
+      <div class="uni-logo-card"><img src="Picture/Universities/KCL.png" alt="King's College London" /></div>
+      <div class="uni-logo-card uni-logo-card--dark"><img src="Picture/Universities/UCL.png" alt="University College London" /></div>
+      <div class="uni-logo-card"><img src="Picture/Universities/Bristol.png" alt="University of Bristol" /></div>
+      <div class="uni-logo-card"><img src="Picture/Universities/Edinburgh.png" alt="University of Edinburgh" /></div>
+      <div class="uni-logo-card"><img src="Picture/Universities/Bath.png" alt="University of Bath" /></div>
+      <div class="uni-logo-card"><img src="Picture/Universities/Durham.png" alt="Durham University" /></div>
+      <div class="uni-logo-card" aria-hidden="true"><img src="Picture/Bam/Reading%20Logo.png" alt="" /></div>
+      <div class="uni-logo-card" aria-hidden="true"><img src="Picture/Pan/RHUL-trimmed.png" alt="" /></div>
+      <div class="uni-logo-card" aria-hidden="true"><img src="Picture/Namtarn/henley-business-school-logo.png" alt="" /></div>
+      <div class="uni-logo-card" aria-hidden="true"><img src="Picture/Michael Paenthale/New-cropped.png" alt="" /></div>
+      <div class="uni-logo-card" aria-hidden="true"><img src="Picture/Universities/Leeds.png" alt="" /></div>
+      <div class="uni-logo-card" aria-hidden="true"><img src="Picture/Universities/Birmingham.png" alt="" /></div>
+      <div class="uni-logo-card" aria-hidden="true"><img src="Picture/Universities/Warwick.png" alt="" /></div>
+      <div class="uni-logo-card" aria-hidden="true"><img src="Picture/Universities/Manchester.png" alt="" /></div>
+      <div class="uni-logo-card" aria-hidden="true"><img src="Picture/Universities/KCL.png" alt="" /></div>
+      <div class="uni-logo-card uni-logo-card--dark" aria-hidden="true"><img src="Picture/Universities/UCL.png" alt="" /></div>
+      <div class="uni-logo-card" aria-hidden="true"><img src="Picture/Universities/Bristol.png" alt="" /></div>
+      <div class="uni-logo-card" aria-hidden="true"><img src="Picture/Universities/Edinburgh.png" alt="" /></div>
+      <div class="uni-logo-card" aria-hidden="true"><img src="Picture/Universities/Bath.png" alt="" /></div>
+      <div class="uni-logo-card" aria-hidden="true"><img src="Picture/Universities/Durham.png" alt="" /></div>
+    </div>
+  </div>
+</section>
 
 <!-- REAL EXPERIENCES -->
 <section id="testimonials" class="testimonials-section">
